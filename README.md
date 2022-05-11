@@ -87,7 +87,7 @@ I used a section instead of a div for the change plan area of the card because t
 </body>
 ```
 
-Used the grid property shorthand on both my article and section area so I can have fine control for the element spacing inside the card. I like it because I can easily visualize the grid I'm making with the grid-area names and you can also set the grid-template-columns and grid-template-rows in one go. All that's left is to set the grid-area on the child elements so it'll got in the appropriate grid-area name I set.
+Used the grid property shorthand on both my article and section area so I can have fine control for the element spacing inside the card. I like it because I can easily visualize the grid I'm making with the grid-area names and you can also set the grid-template-columns and grid-template-rows in one go. All that's left is to set the grid-area on the child elements so it'll go in the appropriate grid-area name I set.
 
 I also liberally used clamps from fluid type scale to set a minimum and maximum on a lot of element sizing.
 ```css
