@@ -22,6 +22,7 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
 
 Users should be able to:
 
+- Elements should responsively resize for mobile and desktop viewports
 - See hover states for interactive elements
 
 ### Screenshot
