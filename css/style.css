@@ -1,0 +1,279 @@
+/* #region Defaults */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --bright-blue-hover: #766cf1;
+  --ff-head:'Red Hat Display', sans-serif;
+  --fw-title:900;
+  --fw-bold:700;
+  --fw-reg:500;
+}
+
+*,*::before,*::after {box-sizing: inherit;}
+
+:not(ul, ol, li) {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,footer,figure {
+  font-family: var(--ff-head);
+  font-weight: var(--fw-bold);
+  color: var(--dark-blue);
+}
+
+h1 {font-weight: var(--fw-title);}
+
+p, footer {
+  font-weight: var(--fw-reg);
+  color: var(--desaturated-blue);
+}
+/* #endregion Defaults */
+
+/* #region Styling */
+body {
+  height: inherit;
+  place-items: center;
+  display: grid;
+  gap: clamp(1.00rem, calc(0.83rem + 0.73vw), 2.00rem);
+  background-image: url(../images/pattern-background-mobile.svg);
+  background-color: var(--pale-blue);
+  background-repeat: repeat-x;
+}
+
+@media only screen and (min-width:376px) {
+  body {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+}
+
+article {
+  background: white;
+  width: clamp(20.44rem, calc(17.73rem + 11.55vw), 28.13rem);
+  height: max-content;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.938rem 1.25rem 0 hsl(245, 83%, 90%);
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  grid: 
+  "   img  img  img   " 
+  "    .    .    .    " clamp(2.25rem, calc(1.90rem + 1.50vw), 3.25rem)
+  "    .    h1   .    " 
+  "    .    .    .    " 1.25rem
+  "    .    p    .    "
+  "    .    .    .    " clamp(1.25rem, calc(1.59rem + -0.38vw), 1.50rem)
+  "    .   sec   .    "
+  "    .    .    .    " clamp(1.50rem, calc(1.37rem + 0.56vw), 1.88rem)
+  "    .   pay   .    "
+  "    .    .    .    " clamp(0.63rem, calc(0.45rem + 0.75vw), 1.13rem)
+  "    .   back  .    "
+  "    .    .    .    " clamp(1.00rem, calc(0.65rem + 1.50vw), 2.00rem)
+  /   auto  1fr  auto;
+}
+
+article > img {
+  object-fit: cover;
+  width: 100%;
+  height: clamp(10.00rem, calc(8.68rem + 5.63vw), 13.75rem);
+  grid-area: img;
+}
+
+article > *:not(img) {
+  text-align: center;
+}
+
+article > h1 {
+  grid-area: h1;
+  font-size: clamp(1.38rem, calc(1.24rem + 0.56vw), 1.75rem);
+}
+
+article > p {
+  grid-area: p;
+  width: clamp(16.25rem, calc(14.60rem + 7.04vw), 20.94rem);
+  font-size:clamp(0.94rem, calc(0.92rem + 0.09vw), 1.00rem);
+  line-height: 1.6em;
+}
+
+  /* #region Music Plans */
+  section {
+    grid-area: sec;
+    width: clamp(17.44rem, calc(15.61rem + 7.79vw), 22.63rem);
+    height: clamp(5.13rem, calc(4.73rem + 1.69vw), 6.25rem);
+    border-radius: 0.938rem;
+    background: var(--very-pale-blue);
+    display: grid;
+    grid:
+    "    icon    plan   btn    "
+    "    icon    sub    btn    "
+    /    auto    2fr    1fr;
+    justify-items: start;
+    align-items: center;
+    row-gap: clamp(0.50rem, calc(0.46rem + 0.19vw), 0.63rem);
+    column-gap: 1.25rem;
+    padding: 1rem clamp(1.00rem, calc(0.74rem + 1.13vw), 1.75rem);
+  }
+
+  section > img {
+    grid-area: icon;
+  }
+
+  section > h2,
+  section > p {
+    line-height: 1em;
+  }
+
+  section > h2 {
+    grid-area: plan;
+    align-self: end;
+    font-size: clamp(0.88rem, calc(0.83rem + 0.19vw), 1.00rem);
+    font-weight: var(--fw-title);
+  }
+  
+  section > p {
+    grid-area: sub;
+    align-self: start;
+    font-size: clamp(0.88rem, calc(0.83rem + 0.19vw), 1.00rem);
+    font-weight: var(--fw-reg);
+  }
+
+  section > a {
+    grid-area: btn;
+    justify-self: end;
+    font-size: clamp(0.81rem, calc(0.79rem + 0.09vw), 0.88rem);
+    font-weight: var(--fw-title);
+    color: var(--bright-blue);
+  }
+  /* #endregion Music Plans */
+  
+  article > a {
+    width: clamp(17.44rem, calc(15.79rem + 7.04vw), 22.13rem);
+    height: 3.125rem;
+    border-radius: 0.625rem;
+    display: grid;
+    align-items: center;
+    text-decoration: none;
+    word-spacing: 0.063rem;
+    font-size: 0.938rem;
+  }
+  
+  article > a:first-of-type {
+    grid-area: pay;
+    background-color: var(--bright-blue);
+    box-shadow: 0 0.938rem 1.25rem 0 hsl(245, 83%, 90%);
+    color: white;
+  }
+  
+  article > a:last-of-type {
+    grid-area: back;
+    color: var(--desaturated-blue);
+    font-weight: var(--fw-title);
+  }
+  
+  footer {
+    font-size: 0.6875rem;
+    position: fixed;
+    inset: auto 0 1rem;
+    text-align: center;
+}
+/* #endregion Styling */
+
+/* #region Active Styles */
+section > a,
+article > a:first-of-type,
+article > a:last-of-type,
+footer > a {
+  transition:
+    color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+}
+
+section > a:hover,
+section > a:active {
+  color: var(--bright-blue-hover);
+}
+
+section > a:focus {
+  color: var(--bright-blue-hover);
+  border-radius: 0.125rem;
+  outline: currentColor solid 0.125rem;
+}
+
+article > a:first-of-type:hover,
+article > a:first-of-type:active{
+  background-color: var(--bright-blue-hover);
+}
+
+article > a:first-of-type:focus {
+  background-color: var(--bright-blue-hover);
+  outline:none;
+  box-shadow:
+  0 0 0 0.125rem white, 
+  0 0 0 0.25rem var(--bright-blue-hover); 
+}
+
+article > a:last-of-type:hover,
+article > a:last-of-type:active {
+  color: var(--dark-blue);
+}
+
+article > a:last-of-type:focus {
+  color: var(--dark-blue);
+  outline: currentColor solid 0.125rem;
+}
+
+footer > a:hover,
+footer > a:active {
+  color: var(--bright-blue-hover);
+}
+
+footer > a:focus {
+  color: var(--bright-blue-hover);
+  border-radius: 0.125rem;
+  outline: currentColor solid 0.125rem;
+}
+
+/* #endregion Active Styles */
+
+/* #region Multiple Card Layout */
+
+/* Uncomment Code if you have multiple articles */
+
+/* body main {
+  display: contents;
+}
+
+@media only screen and (min-width:820px) {
+  body {
+    height: max-content;
+    place-content: center;
+    padding: 3rem;
+    grid-template-areas: "    .     .    ";
+  }
+}
+
+@media only screen and (min-width:1420px) {
+  body {
+    grid-template-areas: "    .     .     .     ";
+  }
+}
+
+@media only screen and (min-width:2000px) {
+  body {
+    grid-template-areas: "    .     .     .     .     ";
+  }
+}
+
+@media only screen and (min-width:2560px) {
+  body {
+    grid-template-areas: "    .     .     .     .     .     ";
+  }
+} */
+
+/* #endregion Multiple Card Layout */
